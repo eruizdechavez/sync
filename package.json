@@ -1,0 +1,12 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "~3.2.0",
+    "underscore": "~1.4.4"
+  }
+}

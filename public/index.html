@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>views-test</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<button id="btn-create" class="btn"><i class="icon-plus"></i> Agregar Usuario</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Email</th>
+							<th>Password</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody id="table"></tbody>
+				</table>
+			</div>
+		</div>
+
+		<div id="form-modal-add" class="modal hide fade">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Agregar Usuario</h3>
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Agregar Usuario</button>
+				<button type="submit" class="btn" data-dismiss="modal">Cancelar</button>
+			</div>
+		</div>
+
+		<div id="form-modal-edit" class="modal hide fade">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h3>Editar Usuario</h3>
+			</div>
+			<div class="modal-body">
+			</div>
+			<div class="modal-footer">
+				<button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+				<button type="submit" class="btn" data-dismiss="modal">Cancelar</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="templates">
+		<div id="form">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<label class="control-label" for="inputName">Nombre</label>
+					<div class="controls">
+						<input type="text" id="inputName" placeholder="Nombre" value="{{ name }}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputEmail">Email</label>
+					<div class="controls">
+						<input type="text" id="inputEmail" placeholder="Email" value="{{ email }}">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="inputPassword">Password</label>
+					<div class="controls">
+						<input type="password" id="inputPassword" placeholder="Password" value="{{ password }}">
+					</div>
+				</div>
+			</form>
+		</div>
+
+		<div>
+			<table>
+				<thead>
+					<tr>
+						<th>Nombre</th>
+						<th>Email</th>
+						<th>Password</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="user">
+						<td>{{ name }}</td>
+						<td>{{ email }}</td>
+						<td>{{ password }}</td>
+						<td>
+							<button class="btn btn-mini edit"><i class="icon-edit"></i></button>
+							<button class="btn btn-mini delete"><i class="icon-trash"></i></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- Libraries -->
+	<script src="js/libs/jquery-2.0.0.js"></script>
+	<script src="js/libs/underscore.js"></script>
+	<script src="js/libs/backbone.js"></script>
+	<script src="js/libs/backbone-super.js"></script>
+	<script src="js/libs/bootstrap.js"></script>
+
+	<!-- Modules -->
+	<script src="js/app/models/User_v{{v}}.js"></script>
+	<script src="js/app/collections/Users_v{{v}}.js"></script>
+	<script src="js/app/views/User.js"></script>
+	<script src="js/app/views/Table.js"></script>
+	<script src="js/app/views/CreateButton.js"></script>
+	<script src="js/app/views/Create.js"></script>
+	<script src="js/app/views/Update.js"></script>
+
+	<!-- Main -->
+	<script src="js/main.js"></script>
+</body>
+</html>
